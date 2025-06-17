@@ -11,8 +11,10 @@ const ReadList = () => {
 
  useEffect(() =>{
     const storedBookData = getStoredBook();
-    const ConvertedStoredBooks = storedBookData.map(id => )
- },[])
+    const ConvertedStoredBooks = storedBookData.map(id => parseInt(id))
+    const myReadList = data.filter(book =>ConvertedStoredBooks.includes(book.bookId));
+    console.log(myReadList);
+ },[]);
     return (
         <Tabs>
     <TabList>
@@ -30,4 +32,4 @@ const ReadList = () => {
     );
 };
 
-export default ReadList;
+export default ReadList

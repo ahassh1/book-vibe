@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+ import React, { Suspense, useEffect, useState } from 'react';
 import Book from '../Book/Book';
 
 const Books = ({data}) => {
@@ -13,11 +13,10 @@ const Books = ({data}) => {
     //         setAllBooks(data)
     //     })
     // },[])
-
-
     // const bookPromise = fetch('./bookData.json').then(res=> res.json())
 
 
+    
     return (
         <div>
             <h1 className='text-3xl text-center p-6'>Books</h1>
@@ -28,7 +27,6 @@ const Books = ({data}) => {
                   data.map((singleBook)=><Book key={singleBook.bookId} singleBook={singleBook}></Book>)
                }
                 </div>
-
 
             </Suspense>
         </div>

@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLoaderData } from 'react-router';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { getStoredBook } from '../utility/addToDB';
 
 const ReadList = () => {
+    // worst case this is 
+  const data = useLoaderData()
+  console.log(data);
+
+ useEffect(() =>{
+    const storedBookData = getStoredBook();
+    const ConvertedStoredBooks = storedBookData.map(id => )
+ },[])
     return (
         <Tabs>
     <TabList>

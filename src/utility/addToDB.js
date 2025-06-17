@@ -11,11 +11,13 @@ const getStoredBook = () =>{
 
 const addToStoredDB = (id) =>{
     const storeBookData = getStoredBook()
-    if(storeBookData.include(id)){
+    if(storeBookData.includes(id)){
         alert('this id is alrady exist')
     }else{
         storeBookData.push(id);
-        console.log(storeBookData);
+        // console.log(storeBookData);
+        const data = JSON.stringify(storeBookData);
+        localStorage.setItem("readList",data)
     }
 }
 export {addToStoredDB}

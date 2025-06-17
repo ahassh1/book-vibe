@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import { createBrowserRouter } from "react-router";
 import Root from "../pages/Root/Root";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
@@ -26,7 +25,8 @@ export const router = createBrowserRouter([
       },
       {
         path:'/bookDetails/:id',
-        Component: BookDetails
+        Component: BookDetails,
+        loader:() => fetch('./booksData.json')
       }
     ],
   },

@@ -14,7 +14,7 @@ const addToStoredDB = (id) =>{
     if(storeBookData.includes(id)){
         alert('this id is alrady exist')
     }else{
-        storeBookData.push(id);
+        storeBookData.push(id)
         // console.log(storeBookData);
         const data = JSON.stringify(storeBookData);
         localStorage.setItem("readList",data)

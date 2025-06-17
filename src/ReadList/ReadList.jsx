@@ -1,24 +1,27 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { getStoredBook } from '../utility/addToDB';
 
 const ReadList = () => {
-    // worst case this is 
+    // worst case this is
+    
+    const [readList, setReadList] = useState([])
   const data = useLoaderData()
   console.log(data);
 
  useEffect(() =>{
+
     const storedBookData = getStoredBook();
     const ConvertedStoredBooks = storedBookData.map(id => parseInt(id))
     const myReadList = data.filter(book =>ConvertedStoredBooks.includes(book.bookId));
-    console.log(myReadList);
+    setReadList(myReadList);
  },[]);
     return (
         <Tabs>
     <TabList>
-      <Tab>Read Book List </Tab>
+      <Tab>Read Book List: {readList.length} </Tab>
       <Tab>My Wish List</Tab>
     </TabList>
 
@@ -30,6 +33,6 @@ const ReadList = () => {
     </TabPanel>
   </Tabs>
     );
-};
+}
 
 export default ReadList

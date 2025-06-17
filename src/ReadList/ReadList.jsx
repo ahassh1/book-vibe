@@ -1,18 +1,20 @@
 import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const ReadList = () => {
     return (
         <Tabs>
     <TabList>
-      <Tab>Title 1</Tab>
-      <Tab>Title 2</Tab>
+      <Tab>Read Book List </Tab>
+      <Tab>My Wish List</Tab>
     </TabList>
 
     <TabPanel>
-      <h2>Any content 1</h2>
+      <h2>Book i read</h2>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 2</h2>
+      <h2>My Wish List</h2>
     </TabPanel>
   </Tabs>
     );
